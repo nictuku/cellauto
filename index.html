@@ -33,7 +33,7 @@ window.onload = function() {
         changeStepFrames();
     });
 
-    loadExample('cavesWithWater');
+    loadExample('cellWars');
     //g_nextExample = 'example_lava';
     //loadExample('lava');
 
@@ -66,8 +66,8 @@ window.onload = function() {
                 textureCanvas.height = world.cellSize;
                 var textureCtx = textureCanvas.getContext('2d');
                 for (var i=0; i<world.palette.length; i++) {
-                    textureCtx.fillStyle = 'rgba(' + world.palette[i] + ')';
-                    textureCtx.fillRect(i*world.cellSize, 0, world.cellSize, world.cellSize);
+                   textureCtx.fillStyle = 'rgba(' + world.palette[i] + ')';
+                   textureCtx.fillRect(i*world.cellSize, 0, world.cellSize, world.cellSize);
                 }
                 var baseTexture = new PIXI.BaseTexture.fromCanvas(textureCanvas);
                 for (var i=0; i<world.palette.length; i++) {
@@ -189,6 +189,7 @@ function drawGrid(pixels, world, stage, textures) {
                             <span class="caret"></span>
                         </button>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                            <li><a class="exampleLink" data-example="cellWars">cellWars</a></li>
                             <li><a class="exampleLink" data-example="caves">caves</a></li>
                             <!--li><a class="exampleLink" data-example="islands">islands</a></li-->
                             <li><a class="exampleLink" data-example="cavesWithWater">cavesWithWater</a></li>
